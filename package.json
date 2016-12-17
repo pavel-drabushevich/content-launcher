@@ -11,6 +11,7 @@
     "electron-prebuilt": "^0.30.3"
   },
   "dependencies": {
-    "nconf": "^0.7.2"
+    "nconf": "^0.7.2",
+    "jquery": "^3.1.0"
   }
 }
