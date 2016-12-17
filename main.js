@@ -17,10 +17,10 @@ app.on('ready', () => {
       protocol: 'file:',
       slashes: true
     }))
-    mainWindow.webContents.openDevTools()
+    // mainWindow.webContents.openDevTools()
 })
 
-ipcMain.on('open-lesson', (lesson) => {
-  var lesson = new PDFWindow({width: 800, height: 600});
-  lesson.loadURL('file://' + __dirname + '/content/' + lesson);
+ipcMain.on('open-lesson', (e, lesson) => {
+  const lessonWindow = new PDFWindow({width: 800, height: 600});
+  lessonWindow.loadURL('file://' + __dirname + '/content/' + lesson);
 });
