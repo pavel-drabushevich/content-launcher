@@ -1,14 +1,9 @@
-'use strict';
+'use strict'
 
-var $ = require('jquery');
-var ipc = require('ipc');
-var remote = require('remote');
-var Tray = remote.require('tray');
-var Menu = remote.require('menu');
-var path = require('path');
-var shell = require('shell');
+const $ = require('jquery')
+const {shell, ipcMain} = require('electron')
 
-var categoriesConfig = require('./js/categories.js');
+var categoriesConfig = require('./categories.js');
 
 $('.close').on('click', function () {
     ipc.send('close-main-window');
@@ -30,12 +25,17 @@ var showCategory = function(category) {
   var items = categoriesConfig[category].items;
   for (var i = 0; i < items.length; i++) {
     var item = items[i];
-    $items.append('<li class="category-item"><span class="glyphicon glyphicon-pencil"/>' + item.name +'</li>');
+    var $item = $('<li class="category-item"><span class="glyphicon glyphicon-pencil"/>' + item.name +'</li>');
+    $item.on('click', function() {
+      ipcMain.send('open-lesson', item.file);
+    });
+    $items.append($item);
   }
   $categoryContent.show();
 }
 
 $category.on('click', function (e) {
+  console.log('TEST')
   $categories.hide();
   $backButton.show();
   showCategory('test');

@@ -41,9 +41,9 @@
 
 .category-item {
   list-style: none;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  font-weight: 700;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-weight: 1400;
   cursor: pointer;
 }
 

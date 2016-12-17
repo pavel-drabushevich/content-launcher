@@ -1,41 +1,26 @@
-'use strict';
+'use strict'
 
-var app = require('app');
-var BrowserWindow = require('browser-window');
-var ipc = require('ipc');
+const {app, BrowserWindow, ipcMain} = require('electron')
+const path = require('path')
+const url = require('url')
+const PDFWindow = require('electron-pdf-window')
 
-var mainWindow = null;
+let mainWindow;
 
-app.on('ready', function() {
+app.on('ready', () => {
     mainWindow = new BrowserWindow({
-        frame: false,
         height: 600,
-        resizable: false,
         width: 1000
-    });
+    })
+    mainWindow.loadURL(url.format({
+      pathname: path.join(__dirname, '/app/index.html'),
+      protocol: 'file:',
+      slashes: true
+    }))
+    mainWindow.webContents.openDevTools()
+})
 
-    mainWindow.loadUrl('file://' + __dirname + '/app/index.html');
-});
-
-ipc.on('close-main-window', function () {
-    app.quit();
-});
-
-ipc.on('open-settings-window', function () {
-    if (settingsWindow) {
-        return;
-    }
-
-    settingsWindow = new BrowserWindow({
-        frame: false,
-        height: 200,
-        resizable: false,
-        width: 200
-    });
-
-    settingsWindow.loadUrl('file://' + __dirname + '/app/settings.html');
-
-    settingsWindow.on('closed', function () {
-        settingsWindow = null;
-    });
+ipcMain.on('open-lesson', (lesson) => {
+  var lesson = new PDFWindow({width: 800, height: 600});
+  lesson.loadURL('file://' + __dirname + '/content/' + lesson);
 });
