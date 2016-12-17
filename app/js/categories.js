@@ -14,7 +14,7 @@ module.exports = {
         {name: 'Урок 8', file: 'test.pdf'},
         {name: 'Урок 9', file: 'test.pdf'},
         {name: 'Урок 10', file: 'test.pdf'},
-        {name: 'Урок 11', file: 'test.pdf'},
+        {name: 'Урок с названием 11', file: 'test.pdf'},
         {name: 'Урок 12', file: 'test.pdf'}
       ]
     }
