@@ -8,6 +8,8 @@ var Menu = remote.require('menu');
 var path = require('path');
 var shell = require('shell');
 
+var categoriesConfig = require('./js/categories.js');
+
 $('.close').on('click', function () {
     ipc.send('close-main-window');
 });
@@ -25,8 +27,11 @@ var $categoryContent = $('.i-role-category-content');
 var showCategory = function(category) {
   var $items = $('.i-role-items');
   $items.empty();
-  $items.append('<li>Урок 1</li>');
-  $items.append('<li>Урок 2</li>');
+  var items = categoriesConfig[category].items;
+  for (var i = 0; i < items.length; i++) {
+    var item = items[i];
+    $items.append('<li class="category-item"><span class="glyphicon glyphicon-pencil"/>' + item.name +'</li>');
+  }
   $categoryContent.show();
 }
 
