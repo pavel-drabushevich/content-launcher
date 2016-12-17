@@ -10,3 +10,17 @@
 
     -webkit-app-region: no-drag;
 }
+
+.close {
+    background: transparent url('../img/close-black.png') no-repeat 4px 4px;
+    background-size: 24px 24px;
+    right: 6px;
+}
+
+.disk-category {
+  cursor: pointer;
+}
+
+.disk-category:hover {
+    background-color: rgba(254,209,54,.9);
+}
