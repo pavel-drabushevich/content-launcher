@@ -6,9 +6,15 @@ var remote = require('remote');
 var Tray = remote.require('tray');
 var Menu = remote.require('menu');
 var path = require('path');
+var shell = require('shell');
 
 $('.close').on('click', function () {
     ipc.send('close-main-window');
+});
+
+$('.i-role-profguide').on('click', function(e) {
+  e.preventDefault();
+  shell.openExternal('http://profguide.by');
 });
 
 var $backButton = $('.i-role-back');
@@ -17,7 +23,10 @@ var $category = $('.i-role-category');
 var $categoryContent = $('.i-role-category-content');
 
 var showCategory = function(category) {
-  $categoryContent.append('<ul><li>Урок 1</li><li>Урок 2</li></ul>');
+  var $items = $('.i-role-items');
+  $items.empty();
+  $items.append('<li>Урок 1</li>');
+  $items.append('<li>Урок 2</li>');
   $categoryContent.show();
 }
 

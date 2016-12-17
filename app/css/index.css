@@ -17,6 +17,14 @@
     right: 6px;
 }
 
+.profguide {
+  padding-bottom: 30px;
+}
+
+.category-items {
+  padding-bottom: 15px;
+}
+
 .disk-category {
   cursor: pointer;
 }
