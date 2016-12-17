@@ -39,8 +39,11 @@
     background-color: rgba(254,209,54,.9);
 }
 
-.category-item {
+.category-item-base {
   width: 100%;
+}
+
+.category-item {
   list-style: none;
   padding: 7px 24px 7px 24px;
   font-weight: 1400;

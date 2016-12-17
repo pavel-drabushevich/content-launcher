@@ -21,7 +21,7 @@ var showCategory = (category) => {
   const items = categoriesConfig[category].items
   for (let i = 0; i < items.length; i++) {
     const item = items[i];
-    const $item = $('<li class="category-item"><span class="glyphicon glyphicon-pencil"/>' + item.name +'</li>');
+    const $item = $('<div class="category-item-base"><li class="category-item"><span class="glyphicon glyphicon-pencil"/>' + item.name +'</li></div>');
     $item.on('click', () => {
       ipcRenderer.send('open-lesson', item.file)
     })
