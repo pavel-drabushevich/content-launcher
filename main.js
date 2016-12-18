@@ -10,7 +10,8 @@ let mainWindow;
 app.on('ready', () => {
     mainWindow = new BrowserWindow({
         height: 500,
-        width: 1000
+        width: 1000,
+        autoHideMenuBar: true
     })
     mainWindow.loadURL(url.format({
       pathname: path.join(__dirname, '/app/index.html'),
