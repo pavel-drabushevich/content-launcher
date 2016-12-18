@@ -33,7 +33,11 @@ var showCategory = (category) => {
 $category.on('click', (e) => {
   $categories.hide()
   $backButton.show()
-  showCategory('test')
+  const $target = $(e.target)
+  const $targetCategory = $target.hasClass('i-role-category') ?
+    $target :
+    $target.parents('.i-role-category');
+  showCategory($targetCategory.data('id'))
 });
 
 $backButton.on('click', (e) => {

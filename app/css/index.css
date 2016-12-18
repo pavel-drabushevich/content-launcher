@@ -27,6 +27,7 @@ section {
 
 .disk-category {
   cursor: pointer;
+  height: 120px;
 }
 .disk-category:hover {
     background-color: #2e686c;

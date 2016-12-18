@@ -9,7 +9,7 @@ let mainWindow;
 
 app.on('ready', () => {
     mainWindow = new BrowserWindow({
-        height: 500,
+        height: 550,
         width: 1000,
         autoHideMenuBar: true
     })
