@@ -20,6 +20,7 @@ app.on('ready', () => {
     }))
     // mainWindow.webContents.openDevTools()
 })
+app.on('window-all-closed', () => app.quit())
 
 ipcMain.on('open-lesson', (e, lesson) => {
   const lessonWindow = new PDFWindow({width: 800, height: 600});
