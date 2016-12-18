@@ -1,24 +1,21 @@
-.close {
-    cursor: pointer;
-    display: inline-block;
-    height: 32px;
-    position: absolute;
-    text-indent: -10000px;
-    top: 6px;
-    width: 32px;
-    z-index: 1;
-
-    -webkit-app-region: no-drag;
+body {
+  background-color: #ebcf85;
 }
 
-.close {
-    background: transparent url('../img/close-black.png') no-repeat 4px 4px;
-    background-size: 24px 24px;
-    right: 6px;
+section {
+    padding: 50px 0;
+}
+
+.subheading {
+  padding-bottom: 30px;
 }
 
 .profguide {
   padding-bottom: 30px;
+}
+
+.profguide-link:hover {
+  color: #2e686c;
 }
 
 .category-items {
@@ -29,14 +26,16 @@
   cursor: pointer;
 }
 .disk-category:hover {
-    background-color: rgba(254,209,54,.9);
+    background-color: #2e686c;
+    color: white;
 }
 
 .back-button {
   cursor: pointer;
 }
 .back-button:hover {
-    background-color: rgba(254,209,54,.9);
+    background-color: #2e686c;
+    color: white;
 }
 
 .category-item-base {
@@ -73,8 +72,8 @@
   animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
-  background-color: #2098D1;
-  background-color: #2098d1;
+  background-color: #b0666f;
+  background-color: #b0666f;
   color: white;
 }
 

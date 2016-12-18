@@ -9,7 +9,7 @@ let mainWindow;
 
 app.on('ready', () => {
     mainWindow = new BrowserWindow({
-        height: 600,
+        height: 500,
         width: 1000
     })
     mainWindow.loadURL(url.format({
